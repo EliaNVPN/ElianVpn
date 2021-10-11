@@ -1,6 +1,6 @@
 {
   "ovpn_file":[
-    {"id":0,"file":"
+    {"id":0,"file":0"
 setenv FORWARD_COMPATIBLE 1
 client
 server-poll-timeout 4
