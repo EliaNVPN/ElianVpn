@@ -123,7 +123,7 @@ d88495e1a07c40d73e746ecea0c171a5
 -----END OpenVPN Static key V1-----
 </tls-auth>"}
   
-  {"id":1,"file":1"
+  {"id":1,"file":"
   setenv FORWARD_COMPATIBLE 1
 client
 server-poll-timeout 4
@@ -245,7 +245,7 @@ b4f38c73dc1766db662635b28af82729
 9299b88f76d610510122c3cc3ff55b62
 -----END OpenVPN Static key V1-----
 </tls-auth>"}
-{"id":2,"file":2"
+{"id":2,"file":"
 setenv FORWARD_COMPATIBLE 1
 client
 server-poll-timeout 4
