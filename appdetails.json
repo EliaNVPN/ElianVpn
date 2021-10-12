@@ -13,7 +13,9 @@
   "free":[
     {"id":0, "file":0, "city":"Calfornia","country":"Germany","image":"unitedstates","ip":"34.71.218.253","active":"true","signal":"a"},
     {"id":1, "file":1, "city":"Netherland","country":"Netherland","image":"netherlands","ip":"34.90.186.182","active":"true","signal":"b"},
-    {"id":2, "file":2, "city":"London","country":"United Kingdom","image":"unitedkingdom","ip":"35.230.147.550","active":"true","signal":"c"}
+    {"id":2, "file":2, "city":"London","country":"United Kingdom","image":"unitedkingdom","ip":"35.230.147.550","active":"true","signal":"b"},
+    {"id":3, "file":3, "city":"Japan","country":"Japan","image":"japan","ip":"219.100.37.195","active":"true","signal":"c"}
+    
        
   ]
 }
