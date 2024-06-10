@@ -15,10 +15,30 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Download zip file
-      run: wget http://kjv.wordfree.net/bibles/app/audio/1.zip -O 1.zip
+      run: |
+        echo "Starting download..."
+        wget http://kjv.wordfree.net/bibles/app/audio/1.zip -O 1.zip
+        echo "Download completed."
+
+    - name: Verify download
+      run: |
+        if [ -f "1.zip" ]; then
+          echo "File downloaded successfully."
+        else
+          echo "File download failed."
+          exit 1
+        fi
 
     - name: Unzip file
-      run: unzip 1.zip -d Gen
+      run: |
+        echo "Unzipping file..."
+        unzip 1.zip -d KJV
+        echo "Unzipping completed."
+
+    - name: List contents of KJV folder
+      run: |
+        echo "Contents of KJV folder:"
+        ls Gen
 
     - name: Configure git
       run: |
