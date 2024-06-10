@@ -1,0 +1,37 @@
+name: Unzip and Upload
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  unzip_upload:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository content
+      uses: actions/checkout@v2
+
+    - name: Download zip file
+      run: wget http://kjv.wordfree.net/bibles/app/audio/1.zip -O 1.zip
+
+    - name: Unzip file
+      run: unzip 1.zip -d Gen
+
+    - name: Configure git
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+
+    - name: Add changes to git
+      run: git add .
+
+    - name: Commit changes
+      run: git commit -m 'Add unzipped files to KJV folder'
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
