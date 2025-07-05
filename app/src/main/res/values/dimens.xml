@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margins and Padding -->
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+    
+    <!-- Card Dimensions -->
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    
+    <!-- Font Sizes -->
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">20sp</dimen>
+    <dimen name="text_size_xxlarge">24sp</dimen>
+    <dimen name="text_size_title">28sp</dimen>
+    <dimen name="text_size_headline">32sp</dimen>
+    
+    <!-- Verse Text Sizes -->
+    <dimen name="verse_text_size_small">14sp</dimen>
+    <dimen name="verse_text_size_normal">16sp</dimen>
+    <dimen name="verse_text_size_large">18sp</dimen>
+    <dimen name="verse_text_size_xlarge">20sp</dimen>
+    
+    <!-- Button Dimensions -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_padding_horizontal">16dp</dimen>
+    <dimen name="button_corner_radius">4dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    
+    <!-- Image Dimensions -->
+    <dimen name="book_icon_size">48dp</dimen>
+    <dimen name="chapter_icon_size">32dp</dimen>
+    <dimen name="verse_icon_size">24dp</dimen>
+    
+    <!-- List Item Dimensions -->
+    <dimen name="list_item_height">56dp</dimen>
+    <dimen name="list_item_padding">16dp</dimen>
+    <dimen name="list_item_margin">8dp</dimen>
+    
+    <!-- Divider Dimensions -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_margin">16dp</dimen>
+    
+    <!-- Daily Verse Card -->
+    <dimen name="daily_verse_card_elevation">8dp</dimen>
+    <dimen name="daily_verse_card_corner_radius">12dp</dimen>
+    <dimen name="daily_verse_card_margin">16dp</dimen>
+    <dimen name="daily_verse_card_padding">20dp</dimen>
+    
+    <!-- Toolbar Dimensions -->
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+    
+    <!-- Navigation Dimensions -->
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    
+    <!-- Minimum Touch Target -->
+    <dimen name="touch_target_size">48dp</dimen>
+    
+    <!-- Grid Spacing -->
+    <dimen name="grid_spacing">8dp</dimen>
+    
+    <!-- Bottom Navigation -->
+    <dimen name="bottom_nav_height">56dp</dimen>
+    
+    <!-- Verse Display -->
+    <dimen name="verse_number_size">18sp</dimen>
+    <dimen name="verse_text_line_spacing">4dp</dimen>
+    
+    <!-- Chapter Grid -->
+    <dimen name="chapter_grid_item_size">72dp</dimen>
+    <dimen name="chapter_grid_spacing">8dp</dimen>
+    
+    <!-- Action Button -->
+    <dimen name="action_button_size">40dp</dimen>
+    <dimen name="action_button_margin">8dp</dimen>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclude notification preferences from backup -->
+    <exclude domain="sharedpref" path="notification_preferences.xml" />
+    <!-- Include user preferences -->
+    <include domain="sharedpref" path="user_preferences.xml" />
+</full-backup-content>

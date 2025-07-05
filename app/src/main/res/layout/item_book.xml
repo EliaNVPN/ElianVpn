@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CardView.Bible"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_small"
+    android:layout_marginVertical="@dimen/margin_tiny"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/card_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/card_padding">
+
+        <ImageView
+            android:id="@+id/bookIcon"
+            android:layout_width="@dimen/book_icon_size"
+            android:layout_height="@dimen/book_icon_size"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:contentDescription="@string/bible_book_image"
+            android:src="@drawable/ic_books"
+            app:tint="@color/primary_color" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bookName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.SamoanBible.Title"
+                android:textSize="@dimen/text_size_large"
+                tools:text="KENESE" />
+
+            <TextView
+                android:id="@+id/bookInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.SamoanBible.Subtitle"
+                tools:text="50 chapters" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/chapter_icon_size"
+            android:layout_height="@dimen/chapter_icon_size"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/navigate_back"
+            android:src="@drawable/ic_arrow_forward"
+            app:tint="@color/text_secondary" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Samoan Bible</string>
+    
+    <!-- Navigation -->
+    <string name="daily_verse">Daily Verse</string>
+    <string name="books">Books</string>
+    <string name="all_books">All Books</string>
+    <string name="old_testament">Old Testament</string>
+    <string name="new_testament">New Testament</string>
+    <string name="chapters">Chapters</string>
+    <string name="verses">Verses</string>
+    
+    <!-- Daily Verse -->
+    <string name="todays_verse">Today\'s Verse</string>
+    <string name="share_verse">Share</string>
+    <string name="copy_verse">Copy</string>
+    <string name="verse_copied">Verse copied to clipboard</string>
+    <string name="share_verse_title">Share God\'s Word</string>
+    
+    <!-- Actions -->
+    <string name="chapter_title">Chapter %d</string>
+    <string name="verse_title">Verse %d</string>
+    <string name="swipe_for_chapters">Swipe left or right to change chapters</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_name">Daily Verses</string>
+    <string name="notification_channel_description">Daily Bible verse notifications</string>
+    <string name="morning_verse_title">Morning Blessing</string>
+    <string name="afternoon_verse_title">Afternoon Reflection</string>
+    <string name="evening_verse_title">Evening Grace</string>
+    <string name="daily_verse_notification">Your daily verse from God\'s Word</string>
+    
+    <!-- Bible Structure -->
+    <string name="book_count">%d books</string>
+    <string name="chapter_count">%d chapters</string>
+    <string name="verse_count">%d verses</string>
+    
+    <!-- Content Description -->
+    <string name="bible_book_image">Bible book icon</string>
+    <string name="share_button">Share this verse</string>
+    <string name="copy_button">Copy this verse</string>
+    <string name="navigate_back">Navigate back</string>
+    
+    <!-- Error Messages -->
+    <string name="error_loading_data">Error loading data. Please try again.</string>
+    <string name="no_verses_found">No verses found.</string>
+    <string name="database_error">Database error occurred.</string>
+    
+    <!-- Search -->
+    <string name="search_hint">Search verses...</string>
+    <string name="search_results">Search Results</string>
+    
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="font_size">Font Size</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="enable_notifications">Enable Daily Notifications</string>
+    <string name="morning_time">Morning Time (8:00 AM)</string>
+    <string name="afternoon_time">Afternoon Time (12:00 PM)</string>
+    <string name="evening_time">Evening Time (8:00 PM)</string>
+</resources>

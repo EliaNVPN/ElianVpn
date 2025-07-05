@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary_color">#1565C0</color>
+    <color name="primary_dark_color">#0D47A1</color>
+    <color name="primary_light_color">#42A5F5</color>
+    
+    <!-- Accent Colors -->
+    <color name="accent_color">#FF6F00</color>
+    <color name="accent_light_color">#FFB74D</color>
+    <color name="accent_dark_color">#E65100</color>
+    
+    <!-- Background Colors -->
+    <color name="background_color">#FAFAFA</color>
+    <color name="surface_color">#FFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_on_accent">#FFFFFF</color>
+    
+    <!-- Bible-themed Colors -->
+    <color name="bible_gold">#FFD700</color>
+    <color name="bible_deep_blue">#1E3A8A</color>
+    <color name="bible_burgundy">#8B2635</color>
+    <color name="bible_cream">#FFF8DC</color>
+    <color name="bible_sage">#87A96B</color>
+    
+    <!-- Verse Colors -->
+    <color name="samoan_verse_bg">#E3F2FD</color>
+    <color name="english_verse_bg">#F3E5F5</color>
+    <color name="verse_border">#BBDEFB</color>
+    
+    <!-- Status Colors -->
+    <color name="success_color">#4CAF50</color>
+    <color name="warning_color">#FF9800</color>
+    <color name="error_color">#F44336</color>
+    
+    <!-- Divider and Border Colors -->
+    <color name="divider_color">#E0E0E0</color>
+    <color name="border_color">#CCCCCC</color>
+    
+    <!-- Gradient Colors -->
+    <color name="gradient_start">#1565C0</color>
+    <color name="gradient_end">#42A5F5</color>
+    
+    <!-- Transparent Colors -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent_black">#80000000</color>
+    <color name="semi_transparent_white">#80FFFFFF</color>
+    
+    <!-- Old Testament Colors -->
+    <color name="old_testament_primary">#8B2635</color>
+    <color name="old_testament_light">#D7CCC8</color>
+    
+    <!-- New Testament Colors -->
+    <color name="new_testament_primary">#1565C0</color>
+    <color name="new_testament_light">#E3F2FD</color>
+    
+    <!-- Daily Verse Colors -->
+    <color name="daily_verse_gradient_start">#FFD700</color>
+    <color name="daily_verse_gradient_end">#FF6F00</color>
+    
+    <!-- Notification Colors -->
+    <color name="notification_color">#1565C0</color>
+</resources>

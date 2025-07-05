@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dailyVerseFragment">
+
+    <fragment
+        android:id="@+id/dailyVerseFragment"
+        android:name="com.elian.samoanbible.ui.dailyverse.DailyVerseFragment"
+        android:label="@string/daily_verse"
+        tools:layout="@layout/fragment_daily_verse" />
+
+    <fragment
+        android:id="@+id/booksFragment"
+        android:name="com.elian.samoanbible.ui.books.BooksFragment"
+        android:label="@string/books"
+        tools:layout="@layout/fragment_books">
+        
+        <action
+            android:id="@+id/action_books_to_chapters"
+            app:destination="@id/chaptersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chaptersFragment"
+        android:name="com.elian.samoanbible.ui.chapters.ChaptersFragment"
+        android:label="@string/chapters"
+        tools:layout="@layout/fragment_chapters">
+        
+        <argument
+            android:name="bookNumber"
+            app:argType="integer" />
+        <argument
+            android:name="bookName"
+            app:argType="string" />
+            
+        <action
+            android:id="@+id/action_chapters_to_verses"
+            app:destination="@id/versesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/versesFragment"
+        android:name="com.elian.samoanbible.ui.verses.VersesFragment"
+        android:label="@string/verses"
+        tools:layout="@layout/fragment_verses">
+        
+        <argument
+            android:name="bookNumber"
+            app:argType="integer" />
+        <argument
+            android:name="bookName"
+            app:argType="string" />
+        <argument
+            android:name="chapter"
+            app:argType="integer" />
+            
+        <action
+            android:id="@+id/action_verses_to_verse_text"
+            app:destination="@id/verseTextFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verseTextFragment"
+        android:name="com.elian.samoanbible.ui.versetext.VerseTextFragment"
+        android:label="Verse Text"
+        tools:layout="@layout/fragment_verse_text">
+        
+        <argument
+            android:name="bookNumber"
+            app:argType="integer" />
+        <argument
+            android:name="bookName"
+            app:argType="string" />
+        <argument
+            android:name="chapter"
+            app:argType="integer" />
+        <argument
+            android:name="verse"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

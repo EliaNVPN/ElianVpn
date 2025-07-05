@@ -1,9 +1,7 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs.kotlin'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     namespace 'com.elian.samoanbible'
@@ -73,6 +71,12 @@ dependencies {
     
     // Preferences
     implementation "androidx.preference:preference-ktx:1.2.1"
+    
+    // WorkManager for daily notifications
+    implementation "androidx.work:work-runtime-ktx:2.8.1"
+    
+    // Notification
+    implementation "androidx.core:core-ktx:1.12.0"
     
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

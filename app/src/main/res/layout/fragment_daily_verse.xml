@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".ui.dailyverse.DailyVerseFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_normal">
+
+            <!-- Daily Verse Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/book_icon_size"
+                    android:layout_height="@dimen/book_icon_size"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:contentDescription="@string/bible_book_image"
+                    android:src="@drawable/ic_daily_verse"
+                    app:tint="@color/accent_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/todays_verse"
+                    android:textAppearance="@style/TextAppearance.SamoanBible.Headline"
+                    android:textColor="@color/accent_color" />
+
+            </LinearLayout>
+
+            <!-- Daily Verse Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dailyVerseCard"
+                style="@style/CardView.DailyVerse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/daily_verse_card_padding">
+
+                    <!-- Verse Reference -->
+                    <TextView
+                        android:id="@+id/verseReference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/margin_normal"
+                        android:textAppearance="@style/TextAppearance.SamoanBible.Subtitle"
+                        android:textColor="@color/accent_color"
+                        android:textStyle="bold"
+                        tools:text="Genesis 1:1" />
+
+                    <!-- Samoan Verse -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/verse_background_samoan"
+                        android:layout_marginBottom="@dimen/margin_normal"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_normal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_small"
+                            android:text="Samoan"
+                            android:textAppearance="@style/TextAppearance.SamoanBible.Subtitle"
+                            android:textColor="@color/primary_color"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/samoanVerseText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.SamoanBible.Verse.Samoan"
+                            android:textIsSelectable="true"
+                            tools:text="Na faia e le Atua le lagi ma le lalolagi i le amataga." />
+
+                    </LinearLayout>
+
+                    <!-- English Verse -->
+                    <LinearLayout
+                        android:id="@+id/englishVerseContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/verse_background_english"
+                        android:layout_marginBottom="@dimen/margin_normal"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_normal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_small"
+                            android:text="English"
+                            android:textAppearance="@style/TextAppearance.SamoanBible.Subtitle"
+                            android:textColor="@color/primary_color"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/englishVerseText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.SamoanBible.Verse.English"
+                            android:textIsSelectable="true"
+                            tools:text="In the beginning God created the heaven and the earth." />
+
+                    </LinearLayout>
+
+                    <!-- Action Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_normal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/copyButton"
+                            style="@style/Button.SamoanBible.Outlined"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_small"
+                            android:layout_weight="1"
+                            android:drawableStart="@drawable/ic_copy"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:text="@string/copy_verse"
+                            android:contentDescription="@string/copy_button" />
+
+                        <Button
+                            android:id="@+id/shareButton"
+                            style="@style/Button.SamoanBible"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:layout_weight="1"
+                            android:drawableStart="@drawable/ic_share"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:text="@string/share_verse"
+                            android:contentDescription="@string/share_button" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Navigate to Books Button -->
+            <Button
+                android:id="@+id/browseBooksButton"
+                style="@style/Button.SamoanBible.Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:drawableStart="@drawable/ic_books"
+                android:drawablePadding="@dimen/margin_small"
+                android:text="@string/books"
+                android:textSize="@dimen/text_size_large" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Loading Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/ProgressBar.SamoanBible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
