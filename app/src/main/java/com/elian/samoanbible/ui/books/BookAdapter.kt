@@ -2,12 +2,10 @@ package com.elian.samoanbible.ui.books
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.elian.samoanbible.R
-import com.elian.samoanbible.data.dao.BookInfo
+import com.elian.samoanbible.data.model.BookInfo
 import com.elian.samoanbible.databinding.ItemBookBinding
 
 class BookAdapter(
@@ -27,38 +25,29 @@ class BookAdapter(
         holder.bind(getItem(position))
     }
     
-    inner class BookViewHolder(
-        private val binding: ItemBookBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
+    inner class BookViewHolder(private val binding: ItemBookBinding) : RecyclerView.ViewHolder(binding.root) {
+        
+        init {
+            binding.root.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onBookClick(getItem(position))
+                }
+            }
+        }
         
         fun bind(book: BookInfo) {
-            binding.apply {
-                bookName.text = book.cleanBookName
+            with(binding) {
+                textViewBookName.text = book.cleanBookName
+                textViewBookNumber.text = book.bookNumber.toString()
                 
-                // Set book icon color based on testament
-                val iconColor = if (book.isOldTestament) {
-                    ContextCompat.getColor(root.context, R.color.old_testament_primary)
-                } else {
-                    ContextCompat.getColor(root.context, R.color.new_testament_primary)
-                }
-                bookIcon.setColorFilter(iconColor)
-                
-                // Set book info (you can customize this to show chapter count, etc.)
-                bookInfo.text = if (book.isOldTestament) {
-                    "Old Testament"
-                } else {
-                    "New Testament"
-                }
-                
-                // Set click listener
-                root.setOnClickListener {
-                    onBookClick(book)
-                }
+                // You can add more details here like chapter count, etc.
+                textViewBookTestament.text = if (book.isOldTestament) "Old Testament" else "New Testament"
             }
         }
     }
     
-    private class BookDiffCallback : DiffUtil.ItemCallback<BookInfo>() {
+    class BookDiffCallback : DiffUtil.ItemCallback<BookInfo>() {
         override fun areItemsTheSame(oldItem: BookInfo, newItem: BookInfo): Boolean {
             return oldItem.bookNumber == newItem.bookNumber
         }

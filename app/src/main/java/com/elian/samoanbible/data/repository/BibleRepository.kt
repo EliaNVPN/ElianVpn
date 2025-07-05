@@ -2,9 +2,10 @@ package com.elian.samoanbible.data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import com.elian.samoanbible.data.dao.BookInfo
+import androidx.lifecycle.map
 import com.elian.samoanbible.data.dao.VerseDao
 import com.elian.samoanbible.data.entity.Verse
+import com.elian.samoanbible.data.model.BookInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -13,12 +14,21 @@ class BibleRepository(
     private val englishVerseDao: VerseDao
 ) {
     
-    // Book operations
-    fun getAllBooks(): LiveData<List<BookInfo>> = samoanVerseDao.getAllBooks()
+    // Book operations - map Verse to BookInfo
+    fun getAllBooks(): LiveData<List<BookInfo>> = 
+        samoanVerseDao.getAllBooks().map { verses ->
+            verses.map { verse -> BookInfo(verse.bookNumber, verse.bookName) }
+        }
     
-    fun getOldTestamentBooks(): LiveData<List<BookInfo>> = samoanVerseDao.getOldTestamentBooks()
+    fun getOldTestamentBooks(): LiveData<List<BookInfo>> = 
+        samoanVerseDao.getOldTestamentBooks().map { verses ->
+            verses.map { verse -> BookInfo(verse.bookNumber, verse.bookName) }
+        }
     
-    fun getNewTestamentBooks(): LiveData<List<BookInfo>> = samoanVerseDao.getNewTestamentBooks()
+    fun getNewTestamentBooks(): LiveData<List<BookInfo>> = 
+        samoanVerseDao.getNewTestamentBooks().map { verses ->
+            verses.map { verse -> BookInfo(verse.bookNumber, verse.bookName) }
+        }
     
     // Chapter operations
     fun getChaptersForBook(bookNumber: Int): LiveData<List<Int>> = 
@@ -112,7 +122,8 @@ class BibleRepository(
     
     // Statistics
     suspend fun getBookInfo(bookNumber: Int): BookInfo? = withContext(Dispatchers.IO) {
-        samoanVerseDao.getBookInfo(bookNumber)
+        val verse = samoanVerseDao.getBookInfo(bookNumber)
+        verse?.let { BookInfo(it.bookNumber, it.bookName) }
     }
     
     suspend fun getChapterCountForBook(bookNumber: Int): Int = withContext(Dispatchers.IO) {

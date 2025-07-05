@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.elian.samoanbible.data.dao.BookInfo
+import com.elian.samoanbible.data.model.BookInfo
 import com.elian.samoanbible.data.repository.BibleRepository
 import kotlinx.coroutines.launch
 

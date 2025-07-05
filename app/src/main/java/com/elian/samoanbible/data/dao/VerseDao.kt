@@ -8,17 +8,17 @@ import com.elian.samoanbible.data.entity.Verse
 @Dao
 interface VerseDao {
     
-    // Get all books
-    @Query("SELECT DISTINCT bookNumber, bookName FROM verses ORDER BY bookNumber ASC")
-    fun getAllBooks(): LiveData<List<BookInfo>>
+    // Get all books - using Verse entity to get distinct books
+    @Query("SELECT * FROM verses GROUP BY bookNumber ORDER BY bookNumber ASC")
+    fun getAllBooks(): LiveData<List<Verse>>
     
     // Get Old Testament books (books 1-39)
-    @Query("SELECT DISTINCT bookNumber, bookName FROM verses WHERE bookNumber <= 39 ORDER BY bookNumber ASC")
-    fun getOldTestamentBooks(): LiveData<List<BookInfo>>
+    @Query("SELECT * FROM verses WHERE bookNumber <= 39 GROUP BY bookNumber ORDER BY bookNumber ASC")
+    fun getOldTestamentBooks(): LiveData<List<Verse>>
     
     // Get New Testament books (books 40-66)
-    @Query("SELECT DISTINCT bookNumber, bookName FROM verses WHERE bookNumber >= 40 ORDER BY bookNumber ASC")
-    fun getNewTestamentBooks(): LiveData<List<BookInfo>>
+    @Query("SELECT * FROM verses WHERE bookNumber >= 40 GROUP BY bookNumber ORDER BY bookNumber ASC")
+    fun getNewTestamentBooks(): LiveData<List<Verse>>
     
     // Get chapters for a specific book
     @Query("SELECT DISTINCT chapter FROM verses WHERE bookNumber = :bookNumber ORDER BY chapter ASC")
@@ -64,9 +64,9 @@ interface VerseDao {
     @Query("SELECT COUNT(*) FROM verses WHERE bookNumber = :bookNumber AND chapter = :chapter")
     suspend fun getVerseCountForChapter(bookNumber: Int, chapter: Int): Int
     
-    // Get book info by book number
-    @Query("SELECT DISTINCT bookNumber, bookName FROM verses WHERE bookNumber = :bookNumber")
-    suspend fun getBookInfo(bookNumber: Int): BookInfo?
+    // Get book info by book number - returns first verse of the book for book info
+    @Query("SELECT * FROM verses WHERE bookNumber = :bookNumber LIMIT 1")
+    suspend fun getBookInfo(bookNumber: Int): Verse?
     
     // Get verses for a specific book
     @Query("SELECT * FROM verses WHERE bookNumber = :bookNumber ORDER BY chapter, verse")
@@ -81,25 +81,10 @@ interface VerseDao {
     suspend fun getTotalBookCount(): Int
     
     // Get verses for specific day (for daily verse feature)
-    @Query("SELECT * FROM verses WHERE (julianday('now') - julianday('2024-01-01')) % (SELECT COUNT(*) FROM verses) = (id % (SELECT COUNT(*) FROM verses)) ORDER BY RANDOM() LIMIT 1")
+    @Query("SELECT * FROM verses ORDER BY RANDOM() LIMIT 1")
     suspend fun getDailyVerse(): Verse?
     
     // Get verses by reference (for sharing)
     @Query("SELECT * FROM verses WHERE bookNumber = :bookNumber AND chapter = :chapter AND verse = :verseNumber")
     suspend fun getVerseByReference(bookNumber: Int, chapter: Int, verseNumber: Int): Verse?
-}
-
-// Data class for book information
-data class BookInfo(
-    val bookNumber: Int,
-    val bookName: String
-) {
-    val cleanBookName: String
-        get() = bookName.replace(",", "").trim()
-        
-    val isOldTestament: Boolean
-        get() = bookNumber <= 39
-        
-    val isNewTestament: Boolean
-        get() = bookNumber >= 40
 }
