@@ -5,6 +5,14 @@
     <color name="primary_dark_color">#0D47A1</color>
     <color name="primary_light_color">#42A5F5</color>
     
+    <!-- Material Design Aliases -->
+    <color name="primary">@color/primary_color</color>
+    <color name="secondary">@color/accent_color</color>
+    <color name="surface">@color/surface_color</color>
+    <color name="background_light">@color/background_color</color>
+    <color name="surface_variant">#F5F5F5</color>
+    <color name="white">#FFFFFF</color>
+    
     <!-- Accent Colors -->
     <color name="accent_color">#FF6F00</color>
     <color name="accent_light_color">#FFB74D</color>

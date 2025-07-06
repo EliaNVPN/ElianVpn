@@ -53,7 +53,7 @@
             android:name="bookName"
             app:argType="string" />
         <argument
-            android:name="chapter"
+            android:name="chapterNumber"
             app:argType="integer" />
             
         <action
@@ -74,10 +74,10 @@
             android:name="bookName"
             app:argType="string" />
         <argument
-            android:name="chapter"
+            android:name="chapterNumber"
             app:argType="integer" />
         <argument
-            android:name="verse"
+            android:name="verseNumber"
             app:argType="integer" />
     </fragment>
 

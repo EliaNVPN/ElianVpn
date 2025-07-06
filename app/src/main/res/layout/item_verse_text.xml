@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_large">
+
+        <!-- Verse Number Badge -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/spacing_large"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/primary">
+
+            <TextView
+                android:id="@+id/textVerseNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:padding="@dimen/spacing_medium"
+                android:minWidth="40dp"
+                android:gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Samoan Text -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_large"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/surface">
+
+            <TextView
+                android:id="@+id/textSamoanVerse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Samoan verse text"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_large"
+                android:lineSpacingMultiplier="1.4"
+                android:padding="@dimen/spacing_large"
+                android:textIsSelectable="true" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- English Text -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_large"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/surface_variant">
+
+            <TextView
+                android:id="@+id/textEnglishVerse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="English verse text"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_medium"
+                android:lineSpacingMultiplier="1.3"
+                android:padding="@dimen/spacing_large"
+                android:textIsSelectable="true" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Reference -->
+        <TextView
+            android:id="@+id/textReference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reference"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/spacing_medium" />
+
+        <!-- Swipe Indicator -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="← Swipe to navigate between verses →"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_small"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:alpha="0.7" />
+
+    </LinearLayout>
+
+</ScrollView>

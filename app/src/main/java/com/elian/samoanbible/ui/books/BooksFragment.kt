@@ -54,10 +54,10 @@ class BooksFragment : Fragment() {
         
         override fun createFragment(position: Int): Fragment {
             return when (position) {
-                0 -> BookListFragment.newInstance(BookListFragment.BookType.ALL_BOOKS)
+                0 -> BookListFragment.newInstance(BookListFragment.BookType.ALL)
                 1 -> BookListFragment.newInstance(BookListFragment.BookType.OLD_TESTAMENT)
                 2 -> BookListFragment.newInstance(BookListFragment.BookType.NEW_TESTAMENT)
-                else -> BookListFragment.newInstance(BookListFragment.BookType.ALL_BOOKS)
+                else -> BookListFragment.newInstance(BookListFragment.BookType.ALL)
             }
         }
     }

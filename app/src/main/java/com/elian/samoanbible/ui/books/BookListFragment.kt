@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elian.samoanbible.SamoanBibleApplication
 import com.elian.samoanbible.data.model.BookInfo
@@ -107,9 +108,12 @@ class BookListFragment : Fragment() {
     }
     
     private fun onBookSelected(book: BookInfo) {
-        // TODO: Navigate to chapters fragment
-        // For now, just show a toast or log
-        println("Selected book: ${book.bookName} (${book.bookNumber})")
+        // Navigate to chapters fragment
+        val action = BooksFragmentDirections.actionBooksToChapters(
+            bookNumber = book.bookNumber,
+            bookName = book.bookName
+        )
+        findNavController().navigate(action)
     }
     
     override fun onDestroyView() {
